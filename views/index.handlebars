@@ -1,0 +1,63 @@
+
+<header>
+  <div id='logo'>		
+    <h1 class="text-center">Bob's Alternative Burgers</h1>
+  </div> 
+<img src="images/Patty.png" class='img-responsive center-block'alt="burger icon">
+</header>
+
+
+<div class="container">	
+  <div class="row">
+	<div class="col-xs-offset-2 col-xs-8 col-sm-4 col-sm-offset-0  text-center">
+	  <h3>Place Order</h3>
+	  <div class="burgers">
+	    <form action='/' method="POST" id='newBurger'>
+	  	  <label> 
+	  	  <input type="text" name='burger_type' required="">
+	  	  </label>
+	  	  <input type="submit">
+	    </form>
+		<h4>Select From one of the following</h4>
+			<ul>
+				<li> <button id='testingButtons'class="menuOrder">Goal Brain Burger</button></li>
+				<li> <button class="menuOrder">Spinal Joe</button></li>
+				<li> <button class="menuOrder">Fleshy Vegie</button></li>
+				<li> <button class="menuOrder">Just Water</button></li>
+			</ul>
+	  </div>	
+	</div>
+	<div class="col-xs-offset-2 col-xs-8 col-sm-4 col-sm-offset-0 text-center">
+	<h3>Pick Up!</h3>
+	  <div class="burgers">
+	    <ul>	
+		  {{#each eaten}}
+		    {{#if this.burger_eaten}}
+		      <li class="testBorder">{{ordered_burger}}
+		        <form method='post' action="/{{this.id}}?_method=put">
+		     	  <input type="submit" value="Eat Me!">
+		        </form>
+		      </li>  
+		     {{/if}}
+		  {{/each}}
+	    </ul>	
+	  </div>
+	</div>
+	<div class="col-xs-offset-2 col-xs-8 col-sm-4 col-sm-offset-0  text-center">
+	  <h3>Discard!</h3>
+	  <div class="burgers">
+	    <ul>
+	      {{#each eaten}}
+            {{#unless this.burger_eaten}}
+		      <li>{{this.ordered_burger}}
+			    <form method='post' action="/{{this.id}}?_method=delete">
+		          <input type="submit" value="Wash Plate">
+		        </form>
+		      </li>
+		    {{/unless}}
+           {{/each}}
+        </ul>	
+	  </div>
+	</div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+body {
+	background: url(http://img15.deviantart.net/a1ea/i/2012/298/d/f/bob__s_thriller_by_thisisanton-d5ix112.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: black;
+}
+
+
+img {
+	width: 125px;
+	margin-bottom: 1%;
+}
+
+.burgers{
+	overflow-y: auto;
+	height: 300px;
+	background: #b0b373;
+}
+
+.burgers input[type=submit]{
+	margin: 1% 0 2% 0;
+}
+.container {
+	margin-bottom: 2%;
+}
+
+ul {
+	list-style-type: none;
+}
+
+h1, h3{
+	color: white;
+	font-weight: bold;
+}
+button {
+	width: 150px;
+	margin: 2% 0;
+	position: relative;
+	right: 7%;
+}
+
+
+
+input[type=submit],  button {
+	background: url(../images/night_sky.jpg);
+	background-size: cover;
+	color: white;
+	font-weight: bold;
+}
+
+
+
+
+.testBorder {
+	border: 3px solid #a50d10;
+	margin: 2% 0;
+	position: relative;
+	left: -6%;
+}

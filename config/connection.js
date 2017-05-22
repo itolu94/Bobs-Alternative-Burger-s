@@ -15,5 +15,6 @@ if(process.env.JAWSDB_URL){
 	  database: 'bobs_alternative_burgersdb'
   });
 }
-
+ connection.connect();
+ 
 module.exports = connection; 

@@ -1,7 +1,6 @@
 
 var mysql = require('mysql');
 
-var mysqlCredentials = require('./mysql.js');
 
 var connection;
 

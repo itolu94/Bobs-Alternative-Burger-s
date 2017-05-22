@@ -15,6 +15,6 @@ SELECT *  FROM burger_list;
 
 
 DROP TABLE burger_list;
-INSERT INTO burger_list (ordered_burger, burger_eaten, date) VALUE('doube cheese burger', 1);
-INSERT INTO burger_list (ordered_burger, burger_eaten, date) VALUE('Vegie Burger', 1);
-INSERT INTO burger_list (ordered_burger, burger_eaten, date) VALUE('1 Pound Burger', 0);
+INSERT INTO burger_list (ordered_burger, burger_eaten) VALUE('doube cheese burger', 1);
+INSERT INTO burger_list (ordered_burger, burger_eaten) VALUE('Vegie Burger', 1);
+INSERT INTO burger_list (ordered_burger, burger_eaten) VALUE('1 Pound Burger', 0);

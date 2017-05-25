@@ -32,7 +32,7 @@
 	  <div class="burgers">
 	    <ul>	
 		  {{#each eaten}}
-		    {{#if this.burger_eatens}}
+		    {{#if this.burger_eaten}}
 		      <li class="testBorder">{{{ordered_burger}}}
 		        <form method='post' action="/{{this.id}}?_method=put">
 		     	  <input type="submit" value="Eat Me!">

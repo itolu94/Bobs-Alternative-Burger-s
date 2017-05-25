@@ -5,7 +5,7 @@ var query = require('../config/orm.js')
 router.get('/', function(req, resp) {
 	query.madeBurgers(function(result) {
 		console.log(result);
-		resp.render('index', {eaten: result[0]});
+		resp.render('index', {eaten: result});
 	});
 });
 

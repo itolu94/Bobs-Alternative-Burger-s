@@ -3,12 +3,8 @@ var router = express.Router();
 var query = require('../config/orm.js')
 
 router.get('/', function(req, resp) {
-	var burgers = {
-	eaten: [],
-	notEaten: []
-    }
 	query.madeBurgers(function(result) {
-		resp.render('index', {eaten: burgers.eaten})
+		resp.render('index', {eaten: result[0]})
 	});
 });
 

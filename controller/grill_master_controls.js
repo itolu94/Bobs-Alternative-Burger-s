@@ -2,15 +2,26 @@ var express = require('express');
 var router = express.Router();
 var query = require('../config/orm.js')
 
-router.get('/',function(req, resp) {
+router.get('/', function(req, resp) {
+	burgers {
+	eaten: [],
+	notEaten: []
+    }
 	query.madeBurgers(function(result) {
-		resp.render('index', {eaten: result})
+		for(var i = 0; i < result.length; i ++){
+			if(result.burger_eaten[i]){
+				console.log('Burger fount');
+				burgers.eaten.push(result.burger_eaten[i]);
+			}	else burgers.notEaten.push(result.burger_eaten[i]); 
+		}
+
+		resp.render('index', {eaten: burgers.eaten, 
+							  notEaten: burgers.notEaten})
 	});
 });
 
 
-
-router.put('/:id',function(req, resp) {
+router.put('/:id', function(req, resp) {
 	var id = req.params.id;  
 	query.eatingBurger(id);
 	resp.redirect('/');

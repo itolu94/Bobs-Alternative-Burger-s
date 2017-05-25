@@ -31,14 +31,14 @@
 	<h3>Pick Up!</h3>
 	  <div class="burgers">
 	    <ul>	
-		  {{#each eaten}}
-		    {{#if this.burger_eatens}}
+		  {{#each notEaten}}
+		    {{!-- {{#if this.burger_eatens}} --}}
 		      <li class="testBorder">{{ordered_burger}}
 		        <form method='post' action="/{{this.id}}?_method=put">
 		     	  <input type="submit" value="Eat Me!">
 		        </form>
 		      </li>  
-		     {{/if}}
+		     {{!-- {{/if}} --}}
 		  {{/each}}
 	    </ul>	
 	  </div>
@@ -48,13 +48,13 @@
 	  <div class="burgers">
 	    <ul>
 	      {{#each eaten}}
-            {{#unless this.burger_eaten}}
+            {{!-- {{#unless this.burger_eaten}} --}}
 		      <li>{{this.ordered_burger}}
 			    <form method='post' action="/{{this.id}}?_method=delete">
 		          <input type="submit" value="Wash Plate">
 		        </form>
 		      </li>
-		    {{/unless}}
+		    {{!-- {{/unless}} --}}
            {{/each}}
         </ul>	
 	  </div>

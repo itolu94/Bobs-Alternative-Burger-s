@@ -4,7 +4,7 @@ var query = require('../config/orm.js')
 
 router.get('/', function(req, resp) {
 	var burgers = {
-	eaten: [],
+	eaten: [],
 	notEaten: []
     }
 	query.madeBurgers(function(result) {

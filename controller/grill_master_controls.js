@@ -8,13 +8,13 @@ router.get('/', function(req, resp) {
 	notEaten: []
     }
 	query.madeBurgers(function(result) {
-		for(var i = 0; i < result.length; i ++){
-			if(result.burger_eaten[i]){
-				console.log('Burger fount');
-				burgers.eaten.push(result.burger_eaten[i]);
-			}	else burgers.notEaten.push(result.burger_eaten[i]); 
-		}
-
+		// for(var i = 0; i < result.length; i ++){
+		// 	if(result.burger_eaten[i]){
+		// 		console.log('Burger fount');
+		// 		burgers.eaten.push(result.burger_eaten[i]);
+		// 	}	else burgers.notEaten.push(result.burger_eaten[i]); 
+		// }
+		console.log(result);
 		resp.render('index', {eaten: burgers.eaten, 
 							  notEaten: burgers.notEaten})
 	});

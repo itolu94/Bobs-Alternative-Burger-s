@@ -31,7 +31,7 @@
 	<h3>Pick Up!</h3>
 	  <div class="burgers">
 	    <ul>	
-		  {{#each notEaten}}
+		  {{#each eaten}}
 		    {{#if this.burger_eatens}}
 		      <li class="testBorder">{{{ordered_burger}}}
 		        <form method='post' action="/{{this.id}}?_method=put">

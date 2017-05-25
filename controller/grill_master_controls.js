@@ -8,14 +8,7 @@ router.get('/', function(req, resp) {
 	notEaten: []
     }
 	query.madeBurgers(function(result) {
-		console.log(result);
-		for(var i = 0; i < result.length; i ++){
-			if(!result[i].burger_eaten){
-				burgers.eaten.push(result[i]);
-			}	else burgers.notEaten.push(result[i]); 
-		}
-		resp.render('index', {eaten: burgers.eaten, 
-							  notEaten: burgers.notEaten})
+		resp.render('index', {eaten: burgers.eaten})
 	});
 });
 

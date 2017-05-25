@@ -9,13 +9,13 @@ router.get('/', function(req, resp) {
     }
 	query.madeBurgers(function(result) {
 		for(var i = 0; i < result.length; i ++){
-			if(result[i].burger_eaten){
+			if(!result[i].burger_eaten){
 				console.log('Burger fount');
-				burgers.eaten.push(result[i].burger_eaten);
-			}	else burgers.notEaten.push(result[i].burger_eaten); 
+				burgers.eaten.push(result[i]);
+			}	else burgers.notEaten.push(result[i]); 
 		}
-		console.log(result);
-		console.log(burgers);
+		// console.log(result);
+		// console.log(burgers);
 		resp.render('index', {eaten: burgers.eaten, 
 							  notEaten: burgers.notEaten})
 	});
@@ -23,7 +23,7 @@ router.get('/', function(req, resp) {
 
 
 router.put('/:id', function(req, resp) {
-	var id = req.params.id;  
+	var id = req.params.id;
 	query.eatingBurger(id);
 	resp.redirect('/');
 });
@@ -37,6 +37,7 @@ router.post('/', function(req, resp){
 
 router.delete('/:id', function(req, resp){
 	var id = req.params.id;
+	console.log('request DELETE made'); 
 	query.cleanPlate(id);
 	resp.redirect('/');
 })

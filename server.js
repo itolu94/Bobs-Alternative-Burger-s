@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var expsHandlebars = require('express-handlebars');
 var methodOverride = require('method-override');
 var path = require('path')
-var PORT = process.env.PORT || 5432;
+var PORT = process.env.PORT || 8080;
 var router = require('./controller/grill_master_controls.js');
 
 var app = express();
@@ -29,5 +29,5 @@ app.use('/', router);
 
 app.listen(PORT, function() {
 	console.log('Server is is being served on localhost:%s', PORT);
-});
+}); 
 

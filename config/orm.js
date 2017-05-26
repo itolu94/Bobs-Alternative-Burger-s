@@ -11,13 +11,10 @@ var query = {
     },
     makeBurger: function(burger) {
         connection.query('INSERT INTO burger_list SET ?', {ordered_burger: burger, burger_eaten: 1 }, function(err, result) {
-            console.log(result)
         });
     },
     eatingBurger: function(id) {
         connection.query('UPDATE burger_list SET burger_eaten = 0 WHERE ?', { 'id': id }, function(err, result) {
-            console.log(result)
-        
         });
     },
     cleanPlate: function(id) {

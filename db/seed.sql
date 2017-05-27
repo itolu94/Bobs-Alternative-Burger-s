@@ -1,4 +1,5 @@
 CREATE DATABASE Bobs_Alternative_BurgersDB;
+
 USE Bobs_Alternative_BurgersDB;
 
 
@@ -10,8 +11,6 @@ CREATE TABLE burger_list(
     PRIMARY KEY (id)
 );
 
-
-SELECT *  FROM burger_list;
 
 
 DROP TABLE burger_list;
